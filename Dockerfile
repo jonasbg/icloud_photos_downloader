@@ -29,7 +29,7 @@ FROM common as build
 
 RUN scripts/build
 
-FROM python:3.9-alpine as runtime
+FROM python:3.12.0a5-alpine as runtime
 
 COPY --from=build /app/dist/* /tmp
 RUN pip3 install /tmp/*.whl
